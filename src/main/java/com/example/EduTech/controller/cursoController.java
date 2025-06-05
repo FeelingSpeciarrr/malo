@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 
+
 @RestController
 @RequestMapping("/api/v1/cursos")
 public class cursoController {
@@ -23,12 +24,29 @@ public class cursoController {
 
     @GetMapping("{nombre}")
     public curso buscarCurso(@PathVariable String nombre) {
-        return cursoService.getCursoNombre(nombre);
+        return cursoService.getCurso(nombre);
     }
     
     @GetMapping("/total")
     public int totalCursosV2() {
         return cursoService.totalCursosV2();
     }
+
+     @GetMapping("/agregar/{id}")
+     public curso agregar (@PathVariable curso c) {
+         return cursoService.agregarCurso(c);
+     }
+
+     @PutMapping("/update/{id}")
+     public curso update(@PathVariable curso c) {
+         return cursoService.updateCurso(c);
+     }
+
+    @DeleteMapping("/delete/{id}")
+     public String delete(@PathVariable int id) {
+         return cursoService.deleteCurso(id);
+     }
+     
+     
     
 }

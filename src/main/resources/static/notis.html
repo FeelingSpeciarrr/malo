@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Sección de notificaciones -->
+<div class="card mb-4">
+    <div class="card-body">
+        <h4>Notificaciones</h4>
+        <button class="btn btn-info mb-3" onclick="mostrarNotificaciones()">Listar notificaciones</button>
+        <p>Total de notificaciones: <span id="totalNoti">0</span></p>
+        <table class="table table-hover table-bordered" id="tablaNotis">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Mensaje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las notificaciones se insertan aquí -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    async function mostrarNotificaciones() {
+    const notificaciones = await listarNoti(); // Esta función viene de tu app_noti.js
+    const tabla = document.querySelector("#tablaNotis tbody");
+    tabla.innerHTML = ""; // Limpiar tabla
+
+    notificaciones.forEach(noti => {
+        const fila = `
+            <tr>
+                <td>${noti.id}</td>
+                <td>${noti.mensaje}</td>
+            </tr>
+        `;
+        tabla.innerHTML += fila;
+    });
+
+    const total = await totalNotiV2(); // También viene de app_noti.js
+    document.getElementById("totalNoti").textContent = total;
+}
+</script>
+<script src="JS/app_noti.js"></script>
+<script>
+    noti.listarNoti();
+</script>
+
+</body>
+</html>
