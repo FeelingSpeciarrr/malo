@@ -5,7 +5,11 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
+<<<<<<< HEAD
 		<version>3.4.5</version>
+=======
+		<version>3.4.6</version>
+>>>>>>> 8a2503afa3b6341a4d0f54182bb23deac3b3c618
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -57,12 +61,18 @@
 		<dependency> 
 			<groupId>com.oracle.database.jdbc</groupId> 
 			<artifactId>ojdbc8</artifactId> 
+<<<<<<< HEAD
 			<version>19.8.0.0</version> 
+=======
+>>>>>>> 8a2503afa3b6341a4d0f54182bb23deac3b3c618
 		</dependency> 
 		<dependency> 
 			<groupId>com.oracle.database.security</groupId> 
 			<artifactId>oraclepki</artifactId> 
+<<<<<<< HEAD
 			<version>19.8.0.0</version> 
+=======
+>>>>>>> 8a2503afa3b6341a4d0f54182bb23deac3b3c618
 		</dependency> 
 		<dependency> 
 			<groupId>com.oracle.database.security</groupId> 
